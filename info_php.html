@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Info PHP</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f4e3, #e6edcc); /* degradado verde suave */
+      color: #333;
+    }
+
+    header {
+      background: #556b2f; /* verde oliva oscuro */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1rem;
+      overflow-x: auto;
+      border-left: 5px solid #6b8e23; /* verde oliva */
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+      padding: 20px;
+      border-top: 2px solid #6b8e23; /* verde oliva */
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #6b8e23;
+      border-radius: 10px;
+      outline: none;
+      transition: all 0.3s ease;
+      resize: vertical;
+    }
+
+    textarea:focus {
+      border-color: #8fbc8f; /* verde claro */
+      box-shadow: 0 0 10px rgba(107,142,35,0.5);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #556b2f, #6b8e23); /* degradado verde oliva */
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🐘 Info PHP</h1>
+  </header>
+
+  <main>
+    <section>
+      <p><b>PHP</b> es un lenguaje de programación usado principalmente para el <b>desarrollo web</b>.</p>
+      <h3>✨ Características de PHP:</h3>
+      <ul>
+        <li>⚡ Funciona en el <b>lado del servidor</b>.</li>
+        <li>📖 Es <b>fácil de aprender</b> y muy usado en todo el mundo.</li>
+        <li>🌐 Permite crear páginas dinámicas, procesar formularios, manejar usuarios y conectarse a bases de datos.</li>
+        <li>🏆 Grandes plataformas como <b>WordPress, Facebook (en sus inicios) y Wikipedia</b> usan PHP.</li>
+      </ul>
+
+      <h3>📌 Ejemplo sencillo en PHP:</h3>
+      <pre>
+&lt;?php
+echo "¡Hola, mundo desde PHP!";
+?&gt;
+      </pre>
+    </section>
+
+    <form method="post" action="#">
+      <label for="contenido"><b>¿Tienes dudas sobre PHP? Escríbelas aquí:</b></label><br>
+      <textarea id="contenido" name="contenido" placeholder="Ingresa aquí tus dudas acerca de PHP..."></textarea><br>
+      <button type="submit" class="btn">💾 Guardar</button>
+      <button type="reset" class="btn">❌ Limpiar</button>
+    </form>
+  </main>
+
+</body>
+</html>

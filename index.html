@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Instituto Técnico Superior - Guía de Programación</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e8ebdf, #d6dac9);
+    margin: 0;
+    padding: 0;
+    color: #2d2d2d;
+    overflow-x: hidden;
+  }
+
+  /* Banner animado elegante */
+  .banner {
+    background: #556B2F; /* Verde oliva oscuro */
+    color: #f5f5f5;
+    padding: 16px 0;
+    overflow: hidden;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  .banner span {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: scroll 35s linear infinite;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Encabezado */
+  header {
+    background: #3e4c2d;
+    color: #fff;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.3);
+  }
+  header img {
+    width: 110px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 12px;
+  }
+  header h1 {
+    font-size: 40px;
+    margin: 10px 0 5px;
+    font-weight: 700;
+  }
+  header h2 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  /* Menú institucional */
+  nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+  }
+  .nav-item {
+    background: #6b8e23;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .nav-item a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .nav-item:hover {
+    transform: translateY(-5px);
+    background: #3e4c2d;
+    box-shadow: 5px 5px 18px rgba(0,0,0,0.3);
+  }
+
+  /* Contenido principal */
+  main {
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 2;
+  }
+  main h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #3e4c2d;
+    font-weight: 600;
+  }
+
+  /* Sección Institucional */
+  .about {
+    background: #f8f9f5;
+    padding: 60px 20px;
+    text-align: center;
+    color: #2d2d2d;
+  }
+
+  .about-container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #556B2F;
+    font-weight: 700;
+  }
+
+  .about p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    text-align: justify;
+  }
+
+  /* Botón principal */
+  .btn-container {
+    margin: 60px 0;
+  }
+  button {
+    background: #556B2F;
+    border: none;
+    border-radius: 35px;
+    padding: 16px 36px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background: #3e4c2d;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Imágenes flotantes en movimiento */
+  .side-img {
+    position: fixed;
+    width: 160px;
+    z-index: 1;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+    opacity: 0.92;
+    animation: moveAcross 20s linear infinite;
+  }
+
+  .img-top-left { top: 10%; left: -200px; animation-delay: 0s; }
+  .img-top-right { top: 20%; left: -220px; animation-delay: 5s; }
+  .img-bottom-left { bottom: 15%; left: -240px; animation-delay: 10s; }
+  .img-bottom-right { bottom: 25%; left: -260px; animation-delay: 15s; }
+
+  @keyframes moveAcross {
+    0% { transform: translateX(0); opacity: 0.8; }
+    50% { transform: translateX(120vw); opacity: 1; }
+    100% { transform: translateX(0); opacity: 0.8; }
+  }
+
+  /* Footer */
+  footer {
+    background: #3e4c2d;
+    color: #f5f5f5;
+    padding: 18px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0px -4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Banner animado -->
+<div class="banner">
+  <span>🌟 Bienvenidos a la Guía de Programación del Instituto Técnico Superior | Aprende, innova y crea con nosotros 🔥 | Formación para el futuro 🚀</span>
+</div>
+
+<!-- Encabezado -->
+<header>
+  <img src="esccu.png" alt="Escudo Instituto Técnico Superior">
+  <h1>Instituto Técnico Superior</h1>
+  <h2>Área de Programación y Tecnología</h2>
+</header>
+
+<!-- Menú arriba -->
+<main>
+  <h2>Guía de Programación</h2>
+  <nav>
+    <div class="nav-item"><a href="programacion_web.html">🌐 Programación Web</a></div>
+    <div class="nav-item"><a href="info_pseint.html">📘 Introducción a PSeInt</a></div>
+    <div class="nav-item"><a href="info_php.html">🐘 Lenguaje PHP</a></div>
+    <div class="nav-item"><a href="herramientas_php.html">⚙️ Herramientas PHP</a></div>
+    <div class="nav-item"><a href="pweb.html">💻 Proyectos Web</a></div>
+    <div class="nav-item"><a href="ejer_logica.html">🧩 Ejercicios de Lógica</a></div>
+    <div class="nav-item"><a href="info_html.html">🔤 Fundamentos de HTML</a></div>
+  </nav>
+
+  <!-- Botón principal -->
+  <div class="btn-container">
+    <button onclick="alert('Bienvenido a la Guía de Programación 🚀')">Comenzar</button>
+  </div>
+</main>
+
+<!-- Información Institucional abajo -->
+<section class="about">
+  <div class="about-container">
+    <h2>Sobre el Instituto Técnico Superior de Pereira</h2>
+    <p>
+      El <strong>Instituto Técnico Superior de Pereira</strong> es una institución educativa con tradición, 
+      compromiso y excelencia en la formación de jóvenes. Nos enfocamos en el desarrollo de competencias 
+      académicas, técnicas y humanas que permiten a nuestros estudiantes enfrentar con éxito los retos 
+      del mundo actual.
+    </p>
+    <p>
+      Nuestra área de <strong>Programación y Tecnología</strong> impulsa la creatividad, la innovación y 
+      el pensamiento lógico, brindando las herramientas necesarias para construir proyectos que transformen 
+      el futuro.
+    </p>
+  </div>
+</section>
+
+<!-- Imágenes decorativas institucionales -->
+<img src="tecc.png" alt="Decoración superior izquierda" class="side-img img-top-left">
+<img src="foto.png" alt="Decoración superior derecha" class="side-img img-top-right">
+<img src="captura.png" alt="Decoración inferior izquierda" class="side-img img-bottom-left">
+<img src="teccc.png" alt="Decoración inferior derecha" class="side-img img-bottom-right">
+
+<!-- Footer -->
+<footer>
+  © 2025 Instituto Técnico Superior - Proyecto de Programación Web | Desarrollado por Isabella y Valeria
+</footer>
+
+</body>
+</html>
