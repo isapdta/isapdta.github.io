@@ -8,24 +8,62 @@
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f0f4e3, #e6edcc); /* degradado verde suave */
+      background: linear-gradient(135deg, #f0f4e3, #e6edcc);
       color: #333;
     }
 
+    /* ENCABEZADO */
     header {
-      background: #556b2f; /* verde oliva oscuro */
+      background: #556b2f;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .titulo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .titulo-container img {
+      width: 55px;
+      height: 55px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
 
     h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       letter-spacing: 2px;
     }
 
+    /* Enlace de YouTube */
+    .youtube-link {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      background: #ff0000;
+      padding: 10px 18px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .youtube-link:hover {
+      background: #cc0000;
+      transform: scale(1.05);
+    }
+
+    /* CUERPO PRINCIPAL */
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -48,14 +86,14 @@
       border-radius: 10px;
       font-size: 1rem;
       overflow-x: auto;
-      border-left: 5px solid #6b8e23; /* verde oliva */
+      border-left: 5px solid #6b8e23;
       margin-bottom: 20px;
     }
 
     form {
       margin-top: 20px;
       padding: 20px;
-      border-top: 2px solid #6b8e23; /* verde oliva */
+      border-top: 2px solid #6b8e23;
     }
 
     textarea {
@@ -71,7 +109,7 @@
     }
 
     textarea:focus {
-      border-color: #8fbc8f; /* verde claro */
+      border-color: #8fbc8f;
       box-shadow: 0 0 10px rgba(107,142,35,0.5);
     }
 
@@ -82,7 +120,7 @@
       font-size: 16px;
       font-weight: bold;
       color: white;
-      background: linear-gradient(135deg, #556b2f, #6b8e23); /* degradado verde oliva */
+      background: linear-gradient(135deg, #556b2f, #6b8e23);
       border: none;
       border-radius: 30px;
       cursor: pointer;
@@ -104,7 +142,13 @@
 <body>
 
   <header>
-    <h1>🖥️ Info PSeInt</h1>
+    <div class="titulo-container">
+      <img src="logop.png" alt="Logo PSeInt">
+      <h1>Info PSeInt</h1>
+    </div>
+    <a class="youtube-link" href="https://youtu.be/1u73tqWPmg8?si=O2gya134ibh9nlZL" target="_blank">
+      🎥 Ver cursos en YouTube
+    </a>
   </header>
 
   <main>
