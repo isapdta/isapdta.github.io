@@ -42,7 +42,7 @@
   header {
     background: #3e4c2d;
     color: #fff;
-    padding: 35px 20px;
+    padding: 30px 20px;
     text-align: center;
     box-shadow: 0px 5px 12px rgba(0,0,0,0.3);
   }
@@ -50,32 +50,40 @@
     width: 110px;
     border-radius: 50%;
     border: 3px solid #fff;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   header h1 {
-    font-size: 40px;
-    margin: 10px 0 5px;
+    font-size: 32px; /* más pequeño */
+    margin: 8px 0 3px;
     font-weight: 700;
   }
+  header h1 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  header h1 a:hover {
+    color: #d4f8a2;
+  }
   header h2 {
-    font-size: 20px;
+    font-size: 24px; /* más grande */
     margin: 0;
-    font-weight: 400;
-    opacity: 0.9;
+    font-weight: 500;
+    opacity: 0.95;
   }
 
   /* Menú institucional */
   nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin: 40px auto;
+    gap: 20px; /* menos espacio entre botones */
+    margin: 25px auto; /* los sube un poco más */
     max-width: 1100px;
     padding: 0 20px;
   }
   .nav-item {
     background: #6b8e23;
-    padding: 22px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
     text-align: center;
@@ -95,14 +103,14 @@
 
   /* Contenido principal */
   main {
-    padding: 50px 20px;
+    padding: 40px 20px 30px;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
     z-index: 2;
   }
   main h2 {
     font-size: 28px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #3e4c2d;
     font-weight: 600;
   }
@@ -138,47 +146,46 @@
     text-align: justify;
   }
 
-  /* Botón principal */
-  .btn-container {
-    margin: 60px 0;
-  }
-  button {
-    background: #556B2F;
-    border: none;
-    border-radius: 35px;
-    padding: 16px 36px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0px 6px 16px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-  }
-  button:hover {
-    background: #3e4c2d;
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
-  }
-
-  /* Imágenes flotantes en movimiento */
+  /* Imágenes decorativas institucionales */
   .side-img {
     position: fixed;
     width: 160px;
     z-index: 1;
     filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
     opacity: 0.92;
-    animation: moveAcross 20s linear infinite;
+    border-radius: 20px; /* bordes más suaves */
   }
 
-  .img-top-left { top: 10%; left: -200px; animation-delay: 0s; }
-  .img-top-right { top: 20%; left: -220px; animation-delay: 5s; }
-  .img-bottom-left { bottom: 15%; left: -240px; animation-delay: 10s; }
-  .img-bottom-right { bottom: 25%; left: -260px; animation-delay: 15s; }
+  /* Dos imágenes quietas */
+  .img-static-left {
+    top: 35%;
+    left: 40px;
+  }
+  .img-static-right {
+    top: 35%;
+    right: 40px;
+  }
 
-  @keyframes moveAcross {
-    0% { transform: translateX(0); opacity: 0.8; }
-    50% { transform: translateX(120vw); opacity: 1; }
-    100% { transform: translateX(0); opacity: 0.8; }
+  /* Dos imágenes animadas que se mueven solo hasta el centro y regresan */
+  .img-animated-left {
+    top: 15%;
+    left: 0;
+    animation: moveCenterLeft 10s ease-in-out infinite;
+  }
+  .img-animated-right {
+    bottom: 20%;
+    right: 0;
+    animation: moveCenterRight 10s ease-in-out infinite;
+  }
+
+  @keyframes moveCenterLeft {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(35vw); } /* hasta el centro sin tocar el logo */
+  }
+
+  @keyframes moveCenterRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-35vw); }
   }
 
   /* Footer */
@@ -208,7 +215,7 @@
 <!-- Encabezado -->
 <header>
   <img src="esccu.png" alt="Escudo Instituto Técnico Superior">
-  <h1>Instituto Técnico Superior</h1>
+  <h1><a href="https://www.itsper.edu.co" target="_blank">Instituto Técnico Superior</a></h1>
   <h2>Área de Programación y Tecnología</h2>
 </header>
 
@@ -224,14 +231,9 @@
     <div class="nav-item"><a href="ejer_logica.html">🧩 Ejercicios de Lógica</a></div>
     <div class="nav-item"><a href="info_html.html">🔤 Fundamentos de HTML</a></div>
   </nav>
-
-  <!-- Botón principal -->
-  <div class="btn-container">
-    <button onclick="alert('Bienvenido a la Guía de Programación 🚀')">Comenzar</button>
-  </div>
 </main>
 
-<!-- Información Institucional abajo -->
+<!-- Información Institucional -->
 <section class="about">
   <div class="about-container">
     <h2>Sobre el Instituto Técnico Superior de Pereira</h2>
@@ -249,11 +251,11 @@
   </div>
 </section>
 
-<!-- Imágenes decorativas institucionales -->
-<img src="tecc.png" alt="Decoración superior izquierda" class="side-img img-top-left">
-<img src="foto.png" alt="Decoración superior derecha" class="side-img img-top-right">
-<img src="captura.png" alt="Decoración inferior izquierda" class="side-img img-bottom-left">
-<img src="teccc.png" alt="Decoración inferior derecha" class="side-img img-bottom-right">
+<!-- Imágenes decorativas -->
+<img src="teccc.png" alt="Decoración izquierda fija" class="side-img img-static-left">
+<img src="captura.png" alt="Decoración derecha fija" class="side-img img-static-right">
+<img src="foto.png" alt="Decoración izquierda animada" class="side-img img-animated-left">
+<img src="tecc.png" alt="Decoración derecha animada" class="side-img img-animated-right">
 
 <!-- Footer -->
 <footer>
